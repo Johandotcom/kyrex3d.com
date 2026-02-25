@@ -1,0 +1,178 @@
+body {
+  background: #111;
+  font-family: "Jersey 10", sans-serif;
+  margin: 0;
+}
+
+/* ================= WRAPPER ================= */
+.carousel-wrapper {
+  width: 100%;
+  margin: 100px 0;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+  will-change: transform;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+/* ================= RESPONSIVE CARDS ================= */
+
+.product-card {
+  flex: 0 0 clamp(200px, 22vw, 300px);
+}
+
+/* ================= CARD ================= */
+
+.card-inner {
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.card-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  padding: clamp(12px, 2vw, 16px);
+}
+
+.product-info h3 {
+  color: white;
+  margin-bottom: 14px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-base {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 90px;
+  z-index: 1;
+}
+
+.buy-btn {
+  position: relative;
+  display: inline-block;
+  padding: 6px 18px;
+  background: #e00000;
+  color: white;
+  text-decoration: none;
+  border-radius: 90px;
+  font-weight: 600;
+  border: 1px solid white;
+  z-index: 2;
+  transition: transform 0.15s ease;
+}
+
+.buy-btn:hover {
+  transform: translate(-4px, -4px);
+}
+
+.buy-btn:active {
+  transform: translate(-2px, -2px);
+}
+
+/* ================= MINI SCROLLBAR ================= */
+
+.carousel-scrollbar {
+  width: 40%;
+  max-width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  margin: 40px auto 0;
+  border-radius: 10px;
+  position: relative;
+}
+
+.scrollbar-thumb {
+  height: 100%;
+  width: 25%;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+}
+
+/* ================= LOADER ================= */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-inner {
+  text-align: center;
+}
+
+.logo {
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.progress {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: white;
+  animation: loadBar 2s linear forwards;
+}
+
+@keyframes loadBar {
+  to { width: 100%; }
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ================= IMG ================= */
+.responsive-img {
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    height: auto;    /* Maintains the original aspect ratio */
+    display: block;  /* Helps with centering and layout issues */
+    margin: auto;    /* Centers the image within its container */
+}
